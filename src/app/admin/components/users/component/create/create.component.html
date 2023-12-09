@@ -1,0 +1,28 @@
+<h1>Create User</h1>
+<!--User Name-->
+<mat-form-field class="input">
+	<mat-label>User Name</mat-label>
+	<input matInput #txtName>
+  </mat-form-field>
+<!--Email-->
+<mat-form-field class="input">
+	<mat-label>Email</mat-label>
+	<input matInput #txtEmail>
+  </mat-form-field>
+<!--Password-->
+<mat-form-field class="input">
+	<mat-label>Password</mat-label>
+	<input matInput #txtPassword>
+  </mat-form-field>
+<!--Date-->
+<mat-form-field class="example-full-width">
+	<mat-label>Choose a date</mat-label>
+	<input matInput #txtDate [matDatepicker]="picker">
+	<mat-hint>DD/MM/YYYY</mat-hint>
+	<mat-datepicker-toggle matIconSuffix [for]="picker">
+	  <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+	</mat-datepicker-toggle>
+	<mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+<button mat-raised-button (click)="create(txtName,txtEmail,txtPassword,txtDate)" class="btn" color="accent">Ekle</button>

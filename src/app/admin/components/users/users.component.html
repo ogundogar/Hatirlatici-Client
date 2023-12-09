@@ -1,0 +1,14 @@
+<mat-drawer-container class="example-container">
+	<mat-drawer mode="side" opened class="add-sidebar">
+		
+		<app-create (createdUser)="createdUser($event)"></app-create>
+		<app-file-upload [options]="fileUploadOptions"></app-file-upload>
+	
+	</mat-drawer>
+	<mat-drawer-content class="list-main">
+		
+		<app-list></app-list>
+	
+	</mat-drawer-content>
+  </mat-drawer-container>
+  
