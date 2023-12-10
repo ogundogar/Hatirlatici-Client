@@ -4,6 +4,7 @@ import { Create_User } from 'src/app/contracts/Create_User';
 import { List_User } from 'src/app/contracts/List_User';
 import { Observable, firstValueFrom, lastValueFrom } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
+import { listUserImage } from 'src/app/contracts/List_User_Image';
 
 @Injectable({
   providedIn: 'root'
@@ -43,5 +44,25 @@ export class UserService {
 		controller:"Users"
 	},id);
 	await firstValueFrom(deleteObservable);
+  }
+
+  async readImage(id:number,successCallBack?:()=>void):Promise<listUserImage[]>{
+	const getObservable:Observable<listUserImage[]> =this.httpClientService.get<listUserImage[]>({
+		action:"getUserImage",
+		controller:"Users"
+	},id);
+	const image:listUserImage[]=await firstValueFrom(getObservable);
+	successCallBack();
+	return image;
+  }
+
+  async deleteImage(userId:number,imageId,successCallBack?:()=>void){
+	const deleteObservable = this.httpClientService.delete({
+		action:"DeleteUserImage",
+		controller:"Users",
+		queryString:`imageId=${imageId}`
+	},userId);
+	await firstValueFrom(deleteObservable);
+	successCallBack();
   }
 }

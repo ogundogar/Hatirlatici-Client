@@ -6,6 +6,8 @@ import { List_User } from 'src/app/contracts/List_User';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { AlertifyService, MessageType, PositionType } from 'src/app/services/admin/alertify/alertify.service';
 import { BaseComponent, SpinnerType } from 'src/app/base/base.component';
+import { DialogService } from 'src/app/services/common/dialog.service';
+import { SelectUserImageDialogComponent } from 'src/app/dialogs/select-user-image-dialog/select-user-image-dialog.component';
 
 declare var $ : any;
 
@@ -18,12 +20,13 @@ export class ListComponent extends BaseComponent {
 	constructor(
 		spinner: NgxSpinnerService,
 		private alertify:AlertifyService,
-		private UserService:UserService
+		private UserService:UserService,
+		private dialogService:DialogService,
 		){
 			super(spinner);
 		}
 	
-	displayedColumns: string[] = ['UserName', 'Email', 'Password','DateOfBrith','CreateDate','UpdateDate','edit','delete'];
+	displayedColumns: string[] = ['UserName', 'Email', 'Password','DateOfBrith','CreateDate','UpdateDate','Image','edit','delete'];
 	dataSource:MatTableDataSource<List_User>=null;
 		
 	@ViewChild(MatPaginator) paginator: MatPaginator;
@@ -41,9 +44,16 @@ export class ListComponent extends BaseComponent {
 	async ngOnInit() {
 		this.getUsers();
 	}
-	
 	async pageChanged(){
 		await this.getUsers();
 	}
-
+	addUserImages(id:number){
+		this.dialogService.openDialog({
+			componentType:SelectUserImageDialogComponent,
+			data:id,
+			options:{
+				width:"1500px"
+			}
+		})
+	}
 }

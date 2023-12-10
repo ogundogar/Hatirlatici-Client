@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FileUploadComponent, FileUploadOptions } from './component/file-upload/file-upload.component';
+import { FileUploadComponent } from './component/file-upload/file-upload.component';
 import { NgxFileDropModule } from 'ngx-file-drop';
 
 

@@ -36,10 +36,15 @@
 		<th mat-header-cell *matHeaderCellDef> Update Date </th>
 		<td mat-cell *matCellDef="let element"> {{element.updateDate}} </td>
 	  </ng-container>
+	   <!--Image Column -->
+	   <ng-container matColumnDef="Image">
+		<th mat-header-cell *matHeaderCellDef>  </th>
+		<td mat-cell *matCellDef="let element"> <img (click)="addUserImages(element.id)"style="cursor: pointer;" src="../../../../../../assets/image.png" alt=""> </td>
+	  </ng-container>
 	  <!--Edit Column -->
 	  <ng-container matColumnDef="edit">
 		<th mat-header-cell *matHeaderCellDef> Edit </th>
-		<td mat-cell *matCellDef="let element"> <img src="../../../../../../assets/edit.png" alt=""> </td>
+		<td mat-cell *matCellDef="let element"> <img style="cursor: pointer;" src="../../../../../../assets/edit.png" alt=""> </td>
 	  </ng-container>
 	  <!--Delete Column -->
 	  <ng-container matColumnDef="delete">

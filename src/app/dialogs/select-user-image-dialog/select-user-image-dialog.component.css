@@ -1,0 +1,9 @@
+.image-card {
+	width: 280px;
+	margin: 5px;
+	float: left;
+  }
+  .image-card img{
+	width: auto;
+	margin: 5px;
+  }

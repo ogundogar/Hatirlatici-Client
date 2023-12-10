@@ -18,6 +18,7 @@ import { DialogService } from '../../../dialog.service';
 })
 export class FileUploadComponent {
 	public files: NgxFileDropEntry[];
+	public postFile:NgxFileDropEntry[];
 	@Input() options: Partial<FileUploadOptions>;
 
 	constructor(
@@ -50,14 +51,16 @@ export class FileUploadComponent {
 		}, fileData).subscribe(
 			data=>{
 				const message: string = "Dosyalar başarıyla yüklenmiştir.";
-	
+				this.postFile=this.files;
 				if (this.options.isAdminPage) {
 					this.spinner.hide(SpinnerType.Cog);
 				  this.alertifyService.message(message,
 					{
 					  messageType: MessageType.success,
 					  position: PositionType.TopRight,
-					})
+					}
+					
+					)
 				} else {
 					this.spinner.hide(SpinnerType.LineSpinFade);
 				  this.customToastrService.message(message, "Başarılı.", {
