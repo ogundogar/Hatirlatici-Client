@@ -3,7 +3,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { BaseComponent, SpinnerType } from 'src/app/base/base.component';
 
 @Component({
-  selector: 'app-reminder',
+  selector: 'app-ui-reminder',
   templateUrl: './reminder.component.html',
   styleUrls: ['./reminder.component.css']
 })
@@ -12,6 +12,6 @@ export class ReminderComponent extends BaseComponent {
 		super(spinner);
 	}
 	ngOnInit(): void {
-		this.showSpinner(SpinnerType.LineSpinFade)
+		//this.showSpinner(SpinnerType.LineSpinFade)
 	}
 }

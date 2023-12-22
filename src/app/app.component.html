@@ -12,16 +12,25 @@
 						  <a class="nav-link active" aria-current="page" routerLink="">Home</a>
 					  </li>
 					  <li class="nav-item">
-						  <a class="nav-link" routerLink="users">Users</a>
+						  <a class="nav-link" routerLink="users">Kullanıcı</a>
 					  </li>
 					  <li class="nav-item">
-						  <a class="nav-link" routerLink="groups">Groups</a>
+						  <a class="nav-link" routerLink="groups">Gruplar</a>
 					  </li>
 					  <li class="nav-item">
-						  <a class="nav-link" routerLink="reminder">Reminder</a>
+						  <a class="nav-link" routerLink="reminder">Hatırlat</a>
 					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" routerLink="register" *ngIf="!authService.isAuthenticated">Kayıt Ol</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" routerLink="login" *ngIf="!authService.isAuthenticated">Giriş Yap</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" routerLink="login" *ngIf="authService.isAuthenticated" style="color: white; background-color: rgb(145, 6, 6); border-radius: 5px; margin-right: 3px;" (click)="signOut()">Çıkış Yap</a>
+					</li>
 				  <li class="nav-item">
-					  <a class="btn btn-outline-success" routerLink="/admin">Admin</a>
+					  <a class="btn btn-outline-success" routerLink="/admin" *ngIf="authService.isAuthenticated">Admin</a>
 				  </li>
 					  <li class="nav-item dropdown">
 						  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

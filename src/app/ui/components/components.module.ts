@@ -4,6 +4,7 @@ import { UsersModule } from './users/users.module';
 import { ReminderModule } from './reminder/reminder.module';
 import { GroupsModule } from './groups/groups.module';
 import { HomeModule } from './home/home.module';
+import { LoginModule } from './login/login.module';
 
 
 
@@ -14,7 +15,8 @@ import { HomeModule } from './home/home.module';
 	UsersModule,
 	ReminderModule,
 	GroupsModule,
-	HomeModule
+	HomeModule,
+	//LoginModule
   ]
 })
 export class ComponentsModule { }

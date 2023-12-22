@@ -3,7 +3,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { BaseComponent, SpinnerType } from 'src/app/base/base.component';
 
 @Component({
-  selector: 'app-groups',
+  selector: 'app-ui-groups',
   templateUrl: './groups.component.html',
   styleUrls: ['./groups.component.css']
 })
@@ -12,6 +12,6 @@ export class GroupsComponent extends BaseComponent {
 		super(spinner);
 	}
 	ngOnInit(): void {
-		this.showSpinner(SpinnerType.LineSpinFade)
+		//this.showSpinner(SpinnerType.LineSpinFade)
 	}
 }

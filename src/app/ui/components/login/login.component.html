@@ -1,0 +1,24 @@
+<div class="container">
+	<div class="row">
+<!--UserName-->
+			<div class="mb-3">
+				<label for="InputName" class="form-label">User Name or Email</label>
+				<input #txtUserNameOrEmail type="userName" class="form-control" placeholder="Kullanıcı Adı veya Email" id="InputName">
+				<small class="form-text">***</small>
+			</div>
+
+<!--Password-->
+			<div class="mb-3">
+				<label for="InputPassword" class="form-label">Şifre</label>
+				<input #txtPassword id="InputPassword" type="password" class="form-control" placeholder="Password">
+				<small class="form-text">***</small>
+			</div>
+
+			<!--Google Login-->
+			<asl-google-signin-button></asl-google-signin-button>
+			
+			
+
+			<button type="submit" class="btn btn-primary" (click)="login(txtUserNameOrEmail.value,txtPassword.value)">Giriş Yap</button>
+	</div>
+</div>
