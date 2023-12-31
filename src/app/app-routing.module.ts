@@ -4,6 +4,7 @@ import { LayoutComponent } from './admin/layout/layout.component';
 import { DashboardComponent } from './admin/components/dashboard/dashboard.component';
 import { HomeComponent } from './ui/components/home/home.component';
 import { authGuard } from './guards/common/auth.guard';
+import { LoginComponent } from './ui/components/login/login.component';
 
 const routes: Routes = [
 	{path:"admin",component:LayoutComponent,children:[
@@ -12,12 +13,12 @@ const routes: Routes = [
 		{path:"groups",loadChildren:()=>import("./admin/components/groups/groups.module").then(module=>module.GroupsModule),canActivate:[authGuard]},
 		{path:"reminder",loadChildren:()=>import("./admin/components/reminder/reminder.module").then(module=>module.ReminderModule),canActivate:[authGuard]},
 	],canActivate:[authGuard]},
-	{path:"",component:HomeComponent},
-	{path:"groups",loadChildren:()=>import("./ui/components/groups/groups.module").then(module=>module.GroupsModule)},
-	{path:"reminder",loadChildren:()=>import("./ui/components/reminder/reminder.module").then(module=>module.ReminderModule)},
-	{path:"users",loadChildren:()=>import("./ui/components/users/users.module").then(module=>module.UsersModule)},
-	{path:"register",loadChildren:()=>import("./ui/components/register/register.module").then(module=>module.RegisterModule)},
-	{path:"login",loadChildren:()=>import("./ui/components/login/login.module").then(module=>module.LoginModule)}
+	{path:"",component:LoginComponent},
+	{path:"groups",loadChildren:()=>import("./ui/components/groups/groups.module").then(module=>module.GroupsModule),canActivate:[authGuard]},
+	{path:"reminder",loadChildren:()=>import("./ui/components/reminder/reminder.module").then(module=>module.ReminderModule),canActivate:[authGuard]},
+	{path:"users",loadChildren:()=>import("./ui/components/users/users.module").then(module=>module.UsersModule),canActivate:[authGuard]},
+	{path:"register",loadChildren:()=>import("./ui/components/register/register.module").then(module=>module.RegisterModule),canActivate:[authGuard]},
+	{path:"home",loadChildren:()=>import("./ui/components/home/home.module").then(module=>module.HomeModule)}
 ];
 
 @NgModule({

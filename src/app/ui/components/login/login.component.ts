@@ -39,7 +39,7 @@ export class LoginComponent extends BaseComponent {
 		this.showSpinner(SpinnerType.LineSpinFade);
 		await this.authLoginService.login(userNameOrEmail,password,()=>{
 		this.authService.identityCheck();
-		this.router.navigate([""]);
+		this.router.navigate(["home"]);
 		this.hideSpinner(SpinnerType.LineSpinFade);
 		});
 	}

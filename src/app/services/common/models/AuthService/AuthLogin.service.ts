@@ -20,14 +20,9 @@ export class AuthLoginService {
 		},{refreshToken:refreshToken});
 
 		const tokenResponse: TokenResponse = await firstValueFrom(observable) as TokenResponse;
-		debugger
-		if(!tokenResponse){
+		if(tokenResponse){
 			localStorage.setItem("accessToken",tokenResponse.token.accessToken);
 			localStorage.setItem("refreshToken",tokenResponse.token.refreshToken);
-			this.toastrService.message("RefreshToken devreye girdi...","Refresh Token",{
-				MessageType:ToastrMessageType.Success,
-				position:ToastrPositionType.TopLeft
-			})
 		}
 		callbackFunction();
 

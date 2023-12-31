@@ -26,7 +26,6 @@ constructor(
 			})
 			this.authLoginService.refreshTokenLogin(localStorage.getItem("refreshToken")).then(data=>{
 			});
-			console.log("Tamam amk")
 			break;
 		case HttpStatusCode.BadRequest:
 			this.toastrService.message("Geçersiz işlem gerçekleştirmeye çalıştınız...","HATA",{
