@@ -1,0 +1,14 @@
+.header{
+	overflow: hidden; 
+	margin: 20px;
+}
+.addReminder{
+	float: right;
+	cursor: pointer;
+}
+.date{
+	float: left;
+}
+table {
+	width: 100%;
+}

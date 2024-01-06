@@ -15,13 +15,14 @@ import { GoogleLoginProvider, GoogleSigninButtonModule, SocialAuthServiceConfig,
 import { HttpErrorHandlerInterceptorService } from './services/common/models/Interceptor/http-error-handler-interceptor.service';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
-	LoginComponent
+	LoginComponent,
+
   ],
   imports: [
-	
     BrowserModule,
     AppRoutingModule,
 	AdminModule,

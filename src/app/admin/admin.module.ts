@@ -11,10 +11,6 @@ import { ComponentsModule } from './components/components.module';
     CommonModule,
 	LayoutModule,
 	ComponentsModule,
-  ],
-  exports:[
-	LayoutModule,
-	ComponentsModule
   ]
 })
 export class AdminModule { }

@@ -36,7 +36,7 @@ export class ListComponent extends BaseComponent {
 			this.paginator?this.paginator.pageIndex:0,this.paginator?this.paginator.pageSize:5,
 			()=>{this.hideSpinner(SpinnerType.Cog);},
 			()=>{this.hideSpinner(SpinnerType.Cog);
-				this.alertify.message("Hata oluştu...",{messageType:MessageType.error,position:PositionType.TopRight,delay:1000,dissmissOthers:true});}
+				this.alertify.message("Hata oluştu...",{messageType:MessageType.error,position:PositionType.TopRight,delay:500,dissmissOthers:true});}
 			);
 			this.dataSource=new MatTableDataSource<List_User>(allUsers.users);
 			this.paginator.length=allUsers.totalCount;

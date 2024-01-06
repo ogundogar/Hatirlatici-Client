@@ -9,17 +9,20 @@ import {MatButtonModule} from '@angular/material/button';
 import { TreeComponent } from './components/tree/tree.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import {MatGridListModule} from '@angular/material/grid-list'; 
+import { FullCalendarModule } from '@fullcalendar/angular';
+import dayGridPlugin from '@fullcalendar/daygrid';
 @NgModule({
   declarations: [
     HomeComponent,
 	TreeComponent,
- CalendarComponent
+	CalendarComponent,
+	
   ],
   imports: [
     CommonModule,
 	RouterModule.forChild([{path:"",component:HomeComponent}]),
-	MatSidenavModule,MatTreeModule,MatIconModule,MatButtonModule,MatGridListModule
-	
+	MatSidenavModule,MatTreeModule,MatIconModule,MatButtonModule,MatGridListModule,
+	FullCalendarModule
   ]
 })
 export class HomeModule { }

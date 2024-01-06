@@ -1,0 +1,18 @@
+<h2 mat-dialog-title> {{data.day}} / {{data.month}} / {{data.year}}</h2>	
+	<div class="input">	
+		<mat-form-field class="title-input">
+			<mat-label>Title</mat-label>
+			<input matInput [(ngModel)]="formData.title">
+		</mat-form-field>
+	</div>
+		
+	<div class="input">	
+		<mat-form-field class="description-input">
+			<mat-label>Description</mat-label>
+			<textarea matInput style="height: 100px;" [(ngModel)]="formData.description"></textarea>
+		  </mat-form-field>
+	</div>
+	<div mat-dialog-actions class="input">
+		<button mat-button [mat-dialog-close]="data" cdkFocusInitial (click)="data">Close</button>
+		<button mat-button [mat-dialog-close]="data" cdkFocusInitial (click)="addReminder()">Add</button>
+	</div>
